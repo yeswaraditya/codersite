@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>codersite</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <h1 class="heading">
+        codersite
+    </h1>
+    <section>
+        <h1>
+            queues using arrays
+        </h1>
+
+        <pre>
+            //queues using arrays
+            //operations enqueue,dequeue,front
+            
+            #include<stdio.h>
+            #define size 5
+            int queue[size];
+            int front=-1;
+            int rear=-1;
+            
+            // takes input and insert in queue
+            void enqueue(int x)
+            {
+                if(rear==size-1)//check if the queue is full
+                {
+                    printf("queue is overflow");
+                }
+                else if(front==-1 && rear==-1)//if queue is empty assign front and rear to 0
+                {
+                    front=rear=0;
+                    queue[rear]=x;
+                }
+                else// increment rear and enqueue value
+                {
+                    rear++;
+                    queue[rear]=x;
+                }
+            
+            }
+            
+            void dequeue()
+            {
+                if(front==-1 && rear==-1)
+                {
+                    printf("queue is empty");
+                    
+                }
+            
+                else if(front==rear)
+                {
+                    front=rear=-1;
+                }
+                else{
+                    printf("the dequeued element=%d",queue[front]);
+                    front++;
+                }
+            }
+            
+            void display()
+            { 
+                if(front==-1 && rear==-1)
+                {
+                    printf("queue is empty");
+                }
+                else
+                {
+                    int i=front;
+                    while(i<=size-1)
+                    {
+                        printf("the queue elements are:%d",queue[front]);
+                        i++;
+                    }
+                }
+            }
+            
+            void peek()
+            {
+                if(front==-1 && rear==-1)
+                {
+                    printf("queue is empty");
+                }
+                else
+                {
+                    printf("the peek element is: %d",queue[front]);
+                }
+            }
+            
+            int main()
+            {
+                enqueue(2);
+                enqueue(4);
+                enqueue(1);
+                display();
+                peek();
+                dequeue();
+            
+            }
+           
+        </pre>
+    </section>
+    
+</body>
+</html>
