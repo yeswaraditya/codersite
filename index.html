@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>codersite</title>
     <link rel="stylesheet" type="text/css" href="main.css">
+    <script>
+        function toggleContent() {
+            var content = document.getElementById("content");
+            content.classList.toggle("hidden");
+        }
+    </script>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <h1 class="heading">
@@ -15,7 +26,11 @@
             queues using arrays
         </h1>
 
-        <pre>
+        <button onclick="toggleContent()">Toggle Content</button>
+
+        <div id="content" class="hidden">
+            
+             <pre>
             //queues using arrays
             //operations enqueue,dequeue,front
             
@@ -104,6 +119,9 @@
             }
            
         </pre>
+        </div>
+       
+       
     </section>
     
 </body>
